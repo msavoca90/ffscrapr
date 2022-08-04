@@ -28,7 +28,7 @@ ff_scoringhistory.sleeper_conn <- function(conn, season = 1999:nflreadr::most_re
       by = c("event" = "ff_event")
     )
 
-  ros <- .nflfastr_roster(season)
+  ros <- .nflfastr_roster(season) %>% mutate(season = as.integer(season))
 
   ps <- .nflfastr_offense_long(season)
 
